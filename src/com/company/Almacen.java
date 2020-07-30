@@ -2,18 +2,16 @@ package com.company;
 
 import java.util.List;
 
-public class Almacen  implements IAlmacen {
+public class Almacen implements IAlmacen {
 
     private List<Producto> listaProductos;
     private Producto productoSeleccionado;
 
 
-
-
     @Override
     public void nuevoProducto(String referencia, double precio, int stock) {
         Producto producto = new Producto(referencia, precio, stock);
-
+        listaProductos.add(producto);
     }
 
     @Override
