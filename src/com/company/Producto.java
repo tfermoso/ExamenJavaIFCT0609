@@ -5,11 +5,13 @@ public class Producto {
     private String referencia;
     private double precio;
     private int stock;
+    private int unidades;
 
-    public Producto(String referencia, double precio, int strock) {
+    public Producto(String referencia, double precio, int stock) {
         this.referencia = referencia;
         this.precio = precio;
         this.stock = stock;
+        this.unidades=unidades;
     }
 
     public String getReferencia() {
@@ -28,11 +30,19 @@ public class Producto {
         this.precio = precio;
     }
 
-    public int getStrock() {
+    public int getStock() {
         return stock;
     }
 
-    public void setStrock(int strock) {
-        this.stock = strock;
+    public void setStock(int stock) {
+        this.stock = stock;
+    }
+
+    public int getUnidades() {
+        return unidades;
+    }
+
+    public void setUnidades(int unidades) {
+        this.unidades = unidades;
     }
 }
