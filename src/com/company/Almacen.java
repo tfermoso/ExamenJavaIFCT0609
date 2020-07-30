@@ -8,6 +8,8 @@ public class Almacen implements IAlmacen {
 
     @Override
     public void nuevoProducto(String referencia, double precio, int stock) {
+        Producto producto=new Producto(referencia,precio,stock);
+
     }
 
     @Override
