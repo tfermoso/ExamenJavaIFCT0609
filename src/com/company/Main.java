@@ -1,11 +1,13 @@
 package com.company;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
-        // write your code here
+
         Scanner leer=new Scanner(System.in);
         String menu="Gestión Inventario\n" +
                 "1. Añadir nuevo producto al almacén\n" +
@@ -20,7 +22,12 @@ public class Main {
             System.out.println(menu);
             opcion=leer.nextInt();
             leer.nextLine();
-            //TODO
+switch (opcion){
+    case 1:
+
+        break;
+
+}
 
         }while(opcion!=7);
     }
