@@ -6,6 +6,10 @@ public class Almacen implements IAlmacen {
     String productoSeleccionado = null;
     ArrayList<Producto> productos = new ArrayList<>();
 
+    public String getProductoSeleccionado() {
+        return productoSeleccionado;
+    }
+
     @Override
     public void nuevoProducto() {
 
