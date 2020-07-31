@@ -7,7 +7,10 @@ public class Main {
     public static void main(String[] args) {
         // write your code here
         Scanner leer=new Scanner(System.in);
-        ProductosSeleccionados productos= new ProductosSeleccionados();
+        Almacen almacen=new Almacen();
+        String ref;
+        double precio;
+        int stock;
         String menu="Gestión Inventario\n" +
                 "1. Añadir nuevo producto al almacén\n" +
                 "2. Incrementar stock\n" +
@@ -18,45 +21,59 @@ public class Main {
                 "7. Salir";
         int opcion;
         do {
-            if (productos.productoSeleccionado()) {
-                System.out.println(menu);
-                opcion = leer.nextInt();
-                leer.nextLine();
+            System.out.println(menu);
+            opcion = leer.nextInt();
+            leer.nextLine();
                 int unidades;
                 //TODO
                 switch (opcion) {
                     case 1:
-                        System.out.println("Añadir producto al Almacen");
-                        unidades = leer.nextInt();
+                        System.out.println("¿Nº.Referencia producto?");
+                        ref = leer.nextLine();
+                        System.out.println("¿Precio producto?");
+                        precio=leer.nextDouble();
+                        System.out.println("¿Stock del producto?");
+                        stock=leer.nextInt();
                         leer.nextLine();
-                        producto
+                        almacen.añadirProducto(ref, precio, stock);
 
                         break;
 
                     case 2:
-                        System.out.println("Incremento de Stock al Almacen");
-
+                        System.out.println("¿Nº.Referencia producto?");
+                        ref=leer.nextLine();
+                        System.out.println("¿cuanto stock hay a añadir?");
+                        stock=leer.nextInt();
+                        leer.nextLine();
+                        almacen.seleccionarProducto(ref);
+                        almacen.aumentarStock(stock);
                         break;
 
                     case 3:
-                        System.out.println("Retirar unidades de producto");
+                        System.out.println("¿Nº.Referencia producto?");
+                        ref=leer.nextLine();
+                        System.out.println("¿Cuanto stock hay que quitar");
+                        stock=leer.nextInt();
+                        leer.nextLine();
+                        almacen.seleccionarProducto(ref);
+                        almacen.quitarStock(stock);
                         break;
 
                     case 4:
-                        System.out.println("Consultar Precio");
+
                         break;
                     case 5:
-                        System.out.println("Consultar Stock");
+
                         break;
 
                     case 6:
-                        System.out.println("Modificar Precio");
+
                         break;
 
                     case 7:
-                        System.out.println("Salir");
+
                         break;
                 }
             } while (opcion != 7) ;
         }
-}}
+}

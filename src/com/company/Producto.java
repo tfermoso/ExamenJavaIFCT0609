@@ -1,12 +1,15 @@
 package com.company;
 
 public class Producto {
-    protected double unidad;
-    public Producto (double inicial){
-        unidad=inicial;
-    }
-    public void nuevoProducto (double unidades){
-        unidad=unidad+unidades;
+    protected double precio;
+    protected String ref;
+    protected int stock;
 
+    public Producto(String ref, double precio, int stock) {
+        this.ref = ref;
+        this.precio = precio;
+        this.stock = stock;
     }
+
+
 }
