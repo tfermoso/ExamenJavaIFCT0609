@@ -7,5 +7,6 @@ public interface IAlmacen {
     public void retirarProducto(int unidades);
     public int consultarStock();
     public double consultarPrecio();
-    public void modificarPrecio();
+    //public double ultimoPrecio();
+    public double[][] modificarPrecio();
 }

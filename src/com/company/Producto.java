@@ -11,6 +11,11 @@ public class Producto {
         this.precio = precio;
         this.stock = stock;
     }
+
+    public Producto() {
+
+    }
+
     public void incrementarStock(int istock){
         this.stock+=istock;
     }
@@ -29,13 +34,25 @@ public class Producto {
     }
 
     public double consultarPrecio() {
-        this.precio=precio;
-        return 1;
+
+        return precio;
     }
 
     public boolean resultadoUltimaOperacion() {
         return true;
 
 
+    }
+
+    public boolean productoSeleccionado() {
+        return true;
+    }
+
+
+        public void seleccionarProducto(String referencia1) {
+    }
+
+    public void modificarPrecio(double precio) {
+        this.precio=precio;
     }
 }

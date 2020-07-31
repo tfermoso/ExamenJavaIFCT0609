@@ -3,7 +3,7 @@ package com.company;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Almacen implements IAlmacen {
+public abstract class Almacen implements IAlmacen {
     private List<Producto> productos;
     private Producto productoSeleccionado;
 
@@ -25,7 +25,6 @@ public class Almacen implements IAlmacen {
                 return;
             }
         }
-
     }
 
     @Override
@@ -61,12 +60,12 @@ public class Almacen implements IAlmacen {
     }
 
     @Override
-    public void modificarPrecio() {
+    public double[][] modificarPrecio() {
         if (productoSeleccionado!=productoSeleccionado){
-            return;
+            return new double[0][];
         }
 
-
+        return new double[0][];
     }
 
     public boolean resultadoUltimaOperacion() {
@@ -82,5 +81,8 @@ public class Almacen implements IAlmacen {
         } else {
             return true;
         }
+    }
+
+    public void nuevoProducto(String referencia) {
     }
 }
