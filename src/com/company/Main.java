@@ -27,14 +27,18 @@ public class Main {
             leer.nextLine();
             switch (opcion){
                 case 1:
-                    System.out.println("Introduzca referencia");
-                   ref=leer.nextLine();
-                    System.out.println("Introduzca precio");
-                    precio=leer.nextDouble();
-                    System.out.println("Introduzca stock");
-                    stock=leer.nextInt();
-                    leer.nextLine();
-                    almacen.añadirProducto(ref,precio,stock);
+
+                        System.out.println("Introduzca referencia");
+                        ref = leer.nextLine();
+                        System.out.println("Introduzca precio");
+                        precio = leer.nextDouble();
+                        System.out.println("Introduzca stock");
+                        stock = leer.nextInt();
+                        leer.nextLine();
+                        almacen.añadirProducto(ref, precio, stock);
+                        if (almacen.getContador()==49) {
+                            System.out.println("Almacen lleno.Siguiente producto introducido sobreescribirá al primero en la lista");
+                        }
                     break;
                 case 2:
                     System.out.println("Introduzca referencia del producto");

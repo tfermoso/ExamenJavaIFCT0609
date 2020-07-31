@@ -10,13 +10,20 @@ public class Almacen implements IAlmacen {
         this.contador = 0;
     }
 
+    public int getContador() {
+        return contador;
+    }
+
     //añadir productos nuevos al almacén (indicando referencia, precio y stock).
     // incrementar el stock de un producto que está en el almacén retirar una o más
     // unidades de un producto consultar stock de un producto consultar precio de un producto
     // modificar el precio de un producto
     public void añadirProducto(String ref, double precio, int stock) {
-        almacen[contador] = new Producto(ref, precio, stock);
-        contador++;
+        if (contador==50) {
+            contador=0;
+        }
+            almacen[contador] = new Producto(ref, precio, stock);
+            contador++;
     }
 
     @Override
