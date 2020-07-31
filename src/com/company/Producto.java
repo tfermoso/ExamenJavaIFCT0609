@@ -5,13 +5,13 @@ public class Producto {
     private String referencia;
     private double precio;
     private int stock;
-    private int unidades;
+
 
     public Producto(String referencia, double precio, int stock) {
         this.referencia = referencia;
         this.precio = precio;
         this.stock = stock;
-        this.unidades=unidades;
+
     }
 
     public String getReferencia() {
@@ -38,11 +38,22 @@ public class Producto {
         this.stock = stock;
     }
 
-    public int getUnidades() {
-        return unidades;
+
+    public void incrementearUnidades(int unidades){
+        this.stock+=unidades;
+
     }
 
-    public void setUnidades(int unidades) {
-        this.unidades = unidades;
+    public void retirarProducto(int unidades){
+        this.stock-=unidades;
+    }
+
+    @Override
+    public String toString() {
+        return "Producto{" +
+                "referencia='" + referencia + '\'' +
+                ", precio=" + precio +
+                ", stock=" + stock +
+                '}';
     }
 }

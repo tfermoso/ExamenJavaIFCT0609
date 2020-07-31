@@ -1,5 +1,6 @@
 package com.company;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Almacen implements IAlmacen {
@@ -7,11 +8,17 @@ public class Almacen implements IAlmacen {
     private List<Producto> listaProductos;
     private Producto productoSeleccionado;
 
+    public Almacen() {
+        listaProductos = new ArrayList<>();
+        productoSeleccionado = null;
+
+    }
+
 
     @Override
     public void nuevoProducto(String referencia, double precio, int stock) {
-        Producto producto = new Producto(referencia, precio, stock);
-        listaProductos.add(producto);
+
+        listaProductos.add(new Producto(referencia, precio, stock));
     }
 
     @Override
@@ -27,26 +34,40 @@ public class Almacen implements IAlmacen {
 
     @Override
     public void incrementarStock(int unidades) {
+        productoSeleccionado.incrementearUnidades(unidades);
 
     }
 
     @Override
     public void retirarProducto(int unidades) {
+        productoSeleccionado.retirarProducto(unidades);
+
 
     }
 
     @Override
     public int consultarStock() {
-        return 0;
+        return productoSeleccionado.getStock();
+
     }
 
     @Override
     public double consultarPrecio() {
-        return 0;
+
+        return productoSeleccionado.getPrecio();
     }
+
 
     @Override
     public void modificarPrecio(double nuevoPrecio) {
+        productoSeleccionado.setPrecio(nuevoPrecio);
+
 
     }
+
+    public String mostrarProducto() {
+        return productoSeleccionado.toString();
+    }
 }
+
+

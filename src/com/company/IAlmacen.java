@@ -15,4 +15,6 @@ public interface IAlmacen {
 
     public void modificarPrecio(double nuevoPrecio);
 
+
+
 }
