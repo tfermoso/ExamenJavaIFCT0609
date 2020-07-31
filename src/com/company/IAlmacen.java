@@ -10,6 +10,6 @@ public interface IAlmacen {
     public int consultarStock();
     public double consultarPrecio();
     public void modificarPrecio(double nuevoPrecio);
-    String mostrarProducto0Seleccionado();
+    String mostrarProductoSeleccionado();
 
 }
