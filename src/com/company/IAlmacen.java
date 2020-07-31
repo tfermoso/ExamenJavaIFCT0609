@@ -8,4 +8,5 @@ public interface IAlmacen {
     int consultarStock();
     double consultarPrecio();
     void cambiarPrecio(double precio);
+    String mostrarSeleccionado();
 }

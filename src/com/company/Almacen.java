@@ -50,4 +50,13 @@ public class Almacen implements IAlmacen {
     public void cambiarPrecio(double precio) {
         productoSelec.precio = precio;
     }
+
+    @Override
+    public String mostrarSeleccionado() {
+        if (productoSelec!=null){
+            return productoSelec.ref+" "+productoSelec.precio+" "+productoSelec.stock;
+        }else {
+            return "No hay producto seleccionado";
+        }
+    }
 }

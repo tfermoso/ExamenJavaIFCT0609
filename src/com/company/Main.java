@@ -18,7 +18,8 @@ public class Main {
                 "4. Consular precio\n" +
                 "5. Consultar stock\n" +
                 "6. Modificar precio\n" +
-                "7. Salir";
+                "7. Mostrar producto seleccionado\n" +
+                "8. Salir";
         int opcion;
         do{
             System.out.println(menu);
@@ -74,9 +75,11 @@ public class Main {
                     almacen.cambiarPrecio(precio);
                     break;
                 case 7:
+                    System.out.println(almacen.mostrarSeleccionado());
                     break;
+                case 8: break;
             }
 
-        }while(opcion!=7);
+        }while(opcion!=8);
     }
 }
