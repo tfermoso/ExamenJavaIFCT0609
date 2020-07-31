@@ -3,7 +3,7 @@ package com.company;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class Almacen implements IAlmacen {
+public class Almacen implements IAlmacen {
     private List<Producto> productos;
     private Producto productoSeleccionado;
 
