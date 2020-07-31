@@ -1,21 +1,30 @@
 package com.company;
 
-public class Almacen {
+import java.util.ArrayList;
+import java.util.List;
+
+public class Almacen implements IAlmacen {
 
     private Producto[] almacen;
     private Producto productoSeleccionado;
     private int contador;
 
+
     public Almacen() {
         this.almacen = new Producto[100];
         this.contador = 0;
+
+
     }
 
-    public void añadirProducto(String ref, double precio, int stock) {
+
+    @Override
+    public void nuevoProducto(String ref, double precio, int stock) {
         almacen[contador] = new Producto(ref, precio, stock);
         contador++;
     }
 
+    @Override
     public void seleccionarProducto(String ref) {
         for (int i = 0; i < almacen.length; i++) {
             if (almacen[i] != null) {
@@ -27,13 +36,36 @@ public class Almacen {
             }
         }
     }
+    
 
+    @Override
     public void aumentarStock(int stock) {
         productoSeleccionado.stock += stock;
     }
+    
 
-    public void quitarStock(int restar) {
-        productoSeleccionado.stock -= restar;
+    @Override
+    public void quitarStock(int stock) {
+        productoSeleccionado.stock -= stock;
     }
+
+    @Override
+    public int consultarStock() {
+        return productoSeleccionado.stock;
+    }
+
+    @Override
+    public double consultarPrecio() {
+        return productoSeleccionado.precio;
+    }
+
+    @Override
+    public void modificarPrecio(double precio) {
+        productoSeleccionado.precio=precio;
+    }
+
+
+
+
 
 }

@@ -24,25 +24,25 @@ public class Main {
             System.out.println(menu);
             opcion = leer.nextInt();
             leer.nextLine();
-                int unidades;
+
                 //TODO
                 switch (opcion) {
                     case 1:
-                        System.out.println("¿Nº.Referencia producto?");
+                        System.out.println("¿Nº.REF Producto?");
                         ref = leer.nextLine();
-                        System.out.println("¿Precio producto?");
+                        System.out.println("¿Precio Producto?");
                         precio=leer.nextDouble();
-                        System.out.println("¿Stock del producto?");
+                        System.out.println("¿Unidades para Stock del producto?");
                         stock=leer.nextInt();
                         leer.nextLine();
-                        almacen.añadirProducto(ref, precio, stock);
+                        almacen.nuevoProducto(ref, precio, stock);
 
                         break;
 
                     case 2:
-                        System.out.println("¿Nº.Referencia producto?");
+                        System.out.println("¿Nº.REF. Producto?");
                         ref=leer.nextLine();
-                        System.out.println("¿cuanto stock hay a añadir?");
+                        System.out.println("¿Cuantas Unids. de Stock hay que Añadir?");
                         stock=leer.nextInt();
                         leer.nextLine();
                         almacen.seleccionarProducto(ref);
@@ -50,9 +50,9 @@ public class Main {
                         break;
 
                     case 3:
-                        System.out.println("¿Nº.Referencia producto?");
+                        System.out.println("¿Nº. REF. Producto?");
                         ref=leer.nextLine();
-                        System.out.println("¿Cuanto stock hay que quitar");
+                        System.out.println("¿Cuantas Unids. del stock hay que Quitar");
                         stock=leer.nextInt();
                         leer.nextLine();
                         almacen.seleccionarProducto(ref);
@@ -60,18 +60,29 @@ public class Main {
                         break;
 
                     case 4:
-
+                        System.out.println("¿Nº. REF. Producto?");
+                        ref=leer.nextLine();
+                        almacen.seleccionarProducto(ref);
+                        System.out.println(almacen.consultarPrecio());
                         break;
                     case 5:
-
+                        System.out.println("¿Nº. REF. Producto?");
+                        ref=leer.nextLine();
+                        almacen.seleccionarProducto(ref);
+                        System.out.println(almacen.consultarStock());
                         break;
 
                     case 6:
-
+                        System.out.println("¿Nº. REF. Producto?");
+                        ref=leer.nextLine();
+                        almacen.seleccionarProducto(ref);
+                        System.out.println("¿Cual es el nuevo Precio/Unid.?");
+                        precio=leer.nextDouble();
+                        almacen.modificarPrecio(precio);
                         break;
 
                     case 7:
-
+                        System.out.println("----- PROGRAMA FINALIZADO -----");
                         break;
                 }
             } while (opcion != 7) ;
