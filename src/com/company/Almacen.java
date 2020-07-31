@@ -49,6 +49,7 @@ public class Almacen implements IAlmacen {
     public int consultarStock() {
         return productoSeleccionado.getStock();
 
+
     }
 
     @Override

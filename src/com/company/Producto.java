@@ -42,6 +42,7 @@ public class Producto {
     public void incrementearUnidades(int unidades){
         this.stock+=unidades;
 
+
     }
 
     public void retirarProducto(int unidades){
