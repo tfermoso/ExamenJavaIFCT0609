@@ -79,9 +79,11 @@ public class Main {
                 case 7:
                     System.out.println(almacen.mostrarProductoSeleccionado());
                     break;
+                case 8:
+                    break;
             }
 
-        }while(opcion!=7);
+        }while(opcion!=8);
     }
 }
 
