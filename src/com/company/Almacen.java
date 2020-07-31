@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Almacen implements IAlmacen {
     private List<Producto> productos;
-    private Producto productoSeleccionado;
+    protected Producto productoSeleccionado;
 
     public Almacen() {
         productos = new ArrayList<>();
@@ -26,13 +26,19 @@ public class Almacen implements IAlmacen {
             }
         }
     }
+    public boolean productoSeleccionado() {
+        if (productoSeleccionado == null) {
+            return false;
+        } else {
+            return true;
+        }
+    }
 
     @Override
     public void incrementarStock(int unidades) {
         if (productoSeleccionado != null) {
             productoSeleccionado.incrementarStock(unidades);
         }
-
     }
 
     @Override
@@ -44,11 +50,11 @@ public class Almacen implements IAlmacen {
 
     @Override
     public int consultarStock() {
-        if (productoSeleccionado != null) {
 
+        if (productoSeleccionado != null) {
             return productoSeleccionado.consultarStock();
         }
-        return 0;
+        return consultarStock();
     }
 
     @Override
@@ -56,33 +62,24 @@ public class Almacen implements IAlmacen {
         if (productoSeleccionado != null) {
             return productoSeleccionado.consultarPrecio();
         }
-        return 0;
+        return consultarPrecio();
     }
 
     @Override
     public double[][] modificarPrecio() {
-        if (productoSeleccionado!=productoSeleccionado){
-            return new double[0][];
+        if (productoSeleccionado==productoSeleccionado){
+            return new double[1][];
         }
-
         return new double[0][];
     }
 
-    public boolean resultadoUltimaOperacion() {
-        if (productoSeleccionado != null) {
-            return productoSeleccionado.resultadoUltimaOperacion();
-        }
-        return false;
-    }
+    //public boolean resultadoUltimaOperacion() {
+        //if (productoSeleccionado != null) {
+            //return productoSeleccionado.resultadoUltimaOperacion();
+        //}
+        //return false;
+    //}
 
-    public boolean productoSeleccionado() {
-        if (productoSeleccionado == null) {
-            return false;
-        } else {
-            return true;
-        }
-    }
 
-    public void nuevoProducto(String referencia) {
-    }
+
 }

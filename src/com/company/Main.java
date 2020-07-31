@@ -4,6 +4,8 @@ import java.util.Scanner;
 
 public class Main {
 
+
+
     public static void main(String[] args) {
         // write your code here
         Scanner leer = new Scanner(System.in);
@@ -59,7 +61,7 @@ public class Main {
                     Scanner referencias=new Scanner(System.in);
                     productos.seleccionarProducto(referencia1);
                     System.out.println("El producto seleccionado es: ");
-                    System.out.println(productos.consultarStock() );
+                    System.out.println(productos.productoSeleccionado.getReferencia());
                     break;
 
 
@@ -82,18 +84,18 @@ public class Main {
                 case 5:
 
                     System.out.println("Consultar stock: ");
-                    System.out.println(productos.consultarStock() + "unidades");
+                    System.out.println(productos.productoSeleccionado.stock + "unidades");
                     break;
 
                 case 6:
 
                     System.out.println("Consultar precio: ");
-                    System.out.println(productos.consultarPrecio() + "€");
+                    System.out.println(productos.productoSeleccionado.precio + "€");
                     break;
 
                 case 7:
 
-                    double[][] precios = productos.modificarPrecio();
+                    double[][] precios = modificarPrecio();
                     for (int i = 0; i < precios.length; i++) {
                         System.out.println("Referencia: " + precios[i][0] +
                                 ", Nuevo precio: " + precios[i][1] +
@@ -116,6 +118,10 @@ public class Main {
 
 
         } while (opcion != 7);
+    }
+
+    private static double[][] modificarPrecio() {
+        return null;
     }
 
     //private static void mostrarResultadoUltimaOperacion(Almacen productos) {

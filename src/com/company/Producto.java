@@ -4,16 +4,30 @@ public class Producto {
     protected String referencia;
     protected double precio;
     protected int stock;
+    private String referencia1;
+    private double precio1;
+    private int stock1;
 
 
-    public Producto(String referencia,double precio, int stock){
+    public Producto(String referencia, double precio, int stock){
         this.referencia = referencia;
         this.precio = precio;
         this.stock = stock;
     }
 
-    public Producto() {
+    public void nuevoProducto(String referencia, double precio, int stock) {
+       this.referencia1=referencia;
+       this.precio1=precio;
+       this.stock1=stock;
 
+    }
+
+    public void seleccionarProducto(String referencia1) {
+        this.referencia1=referencia;
+    }
+
+    public boolean productoSeleccionado() {
+        return true;
     }
 
     public void incrementarStock(int istock){
@@ -24,7 +38,6 @@ public class Producto {
     }
 
     public String getReferencia() {
-        //this.referencia=referencia;
         return referencia;
     }
 
@@ -34,25 +47,17 @@ public class Producto {
     }
 
     public double consultarPrecio() {
-
         return precio;
     }
 
-    public boolean resultadoUltimaOperacion() {
-        return true;
-
-
-    }
-
-    public boolean productoSeleccionado() {
-        return true;
-    }
-
-
-        public void seleccionarProducto(String referencia1) {
-    }
-
     public void modificarPrecio(double precio) {
-        this.precio=precio;
+        return;
     }
+
+
+
+    //public boolean resultadoUltimaOperacion() {
+        //return true;
+    //}
+
 }
