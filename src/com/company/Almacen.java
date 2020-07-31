@@ -9,15 +9,15 @@ public class Almacen implements IAlmacen {
 
     public Almacen() {
        listadeProductos=new ArrayList();
-        productoSelect=null;
-    }
 
+    }
 
 
     @Override
     public void añadirProducto(String referencia, double precio, int stock) {
 
        listadeProductos.add(new Producto (referencia,precio,stock));
+        System.out.println("Producto añadido correctamente ");
 
     }
 
@@ -25,8 +25,8 @@ public class Almacen implements IAlmacen {
     public void selectProducto(String referencia) {
         for (int i = 0; i < listadeProductos.size(); i++) {
             if (listadeProductos.get(i).getReferencia().equals(referencia)) {
-                productoSelect = listadeProductos.get(i);
-                return;
+               productoSelect = listadeProductos.get(i);
+                return ;
             }
 
         }}
@@ -47,6 +47,7 @@ public class Almacen implements IAlmacen {
     @Override
     public void retirarProducto(int unidades) {
         if(productoSelect!=null){
+
             productoSelect.restar(unidades);
 
         }
@@ -71,9 +72,22 @@ public class Almacen implements IAlmacen {
     }
 
     @Override
-    public void modificarPrecio() {
+    public void modificarPrecio(String referencia, double nuevoPrecio) {
+            productoSelect.setPrecio(nuevoPrecio);
+        }
+
+    @Override
+    public String mostrarProducto(String referencia) {
+
+            if (productoSelect!=null){
+                return productoSelect.toString();
+            }else {
+                return "No existe el producto selecionado";
+            }
+        }
+        }
 
 
 
-    }
-}
+
+

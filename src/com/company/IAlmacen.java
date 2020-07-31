@@ -7,7 +7,7 @@ public  void incrementarProducto(int unidades);
 public void retirarProducto(int unidades);
 public int consultarStock();
 public double consultarPrecio();
-public void modificarPrecio();
-
+public void modificarPrecio(String referencia,double nuevoPrecio);
+public String mostrarProducto(String referencia);
 
 }

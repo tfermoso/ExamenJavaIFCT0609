@@ -1,9 +1,9 @@
 package com.company;
 
 public class Producto {
-    private String referencia;
-    private double precio;
-    private int stock;
+    protected String referencia;
+    protected double precio;
+    protected int stock;
 
     public Producto(String referencia, double precio, int stock) {
         this.referencia = referencia;
