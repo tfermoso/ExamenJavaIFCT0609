@@ -6,42 +6,53 @@ public class Almacen implements IAlmacen {
     String productoSeleccionado = null;
     ArrayList<Producto> productos = new ArrayList<>();
 
-    public String getProductoSeleccionado() {
-        return productoSeleccionado;
+    public Producto getProductoSeleccionado() {
+        Producto p = null;
+        for (Producto r : productos) {
+            if (r.getReferencia().equals(productoSeleccionado)) p = r;
+        }
+        return p;
+    }
+
+    public ArrayList<Producto> getProductos() {
+        return productos;
     }
 
     @Override
-    public void nuevoProducto() {
-
+    public void nuevoProducto(String r, double p, int s) {
+        productos.add(new Producto(s, p, r));
     }
 
     @Override
-    public void seleccionarProducto() {
-
+    public void seleccionarProducto(String r) {
+        this.productoSeleccionado = r;
     }
 
     @Override
-    public void incrementarStock() {
-
+    public void incrementarStock(int s) {
+        Producto p = getProductoSeleccionado();
+        p.setStock(p.getStock() + s);
     }
 
     @Override
-    public void retirarProducto() {
-
+    public void retirarProducto(int s) {
+        Producto p = getProductoSeleccionado();
+        p.setStock(p.getStock() - s);
     }
 
     @Override
     public int consultarStock() {
-        return 0;
+        return getProductoSeleccionado().getStock();
     }
 
     @Override
     public double consultarPrecio() {
-        return 0;
+        return getProductoSeleccionado().getPrecio();
     }
 
     @Override
-    public void modificarPrecio() {
-
+    public void modificarPrecio(double p) {
+        Producto r = getProductoSeleccionado();
+        r.setPrecio(p);
     }
 }
