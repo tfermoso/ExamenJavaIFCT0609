@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class Main {
 
+
     public static void main(String[] args) {
         Almacen almacen = new Almacen();
         // write your code here
@@ -37,9 +38,7 @@ public class Main {
                     break;
 
                 case 2:
-                    System.out.println("Referencia producto");
-                    referencia = leer.nextLine();
-                    almacen.seleccionarProducto(referencia);
+                   selecProducto(almacen,leer);
                     System.out.println("Unidades a añadir:");
                     int unidades = leer.nextInt();
                     leer.nextLine();
@@ -47,9 +46,7 @@ public class Main {
                     break;
 
                 case 3:
-                    System.out.println("Referencia producto");
-                    referencia = leer.nextLine();
-                    almacen.seleccionarProducto(referencia);
+                    selecProducto(almacen,leer);
                     System.out.println("Unidades a retirar: ");
                     unidades = leer.nextInt();
                     leer.nextLine();
@@ -57,35 +54,27 @@ public class Main {
                     break;
 
                 case 4:
-                    System.out.println("Referencia producto");
-                    referencia = leer.nextLine();
-                    almacen.seleccionarProducto(referencia);
+                   selecProducto(almacen,leer);
                     System.out.println("El precio del producto seleccionado es: " + almacen.consultarPrecio());
 
 
                     break;
 
                 case 5:
-                    System.out.println("Referencia producto");
-                    referencia = leer.nextLine();
-                    almacen.seleccionarProducto(referencia);
+                    selecProducto(almacen,leer);
                     System.out.println("Las unidadesd de stock son : " + almacen.consultarStock());
 
                     break;
 
                 case 6:
-                    System.out.println("Referencia producto");
-                    referencia = leer.nextLine();
-                    almacen.seleccionarProducto(referencia);
+                    selecProducto(almacen, leer);
                     System.out.println("Introduce el nuevo precio: ");
                     precio = leer.nextDouble();
                     leer.nextLine();
                     almacen.modificarPrecio(precio);
                     break;
                 case 7:
-                    System.out.println("Referencia producto");
-                    referencia = leer.nextLine();
-                    almacen.seleccionarProducto(referencia);
+                    selecProducto(almacen,leer);
                     System.out.println(almacen.mostrarProducto());
                     break;
 
@@ -93,6 +82,17 @@ public class Main {
                     break;
             }
 
-        } while (opcion!= 8);
+        } while (opcion != 8);
+
+
     }
+
+    private static void selecProducto(Almacen almacen, Scanner leer) {
+        String referencia;
+        System.out.println("Referencia producto");
+        referencia = leer.nextLine();
+        almacen.seleccionarProducto(referencia);
+    }
+
+
 }
